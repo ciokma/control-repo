@@ -29,12 +29,10 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
+  include role::example
 }
 
 node '172.31.66.33' {
   include role::webserver
 }
 
-node 'default' {
-  include role::example
-}
