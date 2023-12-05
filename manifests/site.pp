@@ -37,5 +37,6 @@ node '172.31.82.206' {
 # webserver ip
 node '172.31.66.33' {
   include role::webserver
+  include role::example
 }
 
