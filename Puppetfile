@@ -16,4 +16,4 @@ forge 'https://forge.puppet.com'
 #  :git    => 'https://github.com/puppetlabs/puppetlabs-apache',
 #  :branch => 'docs_experiment'
 
-mod 'puppetlabs-dsc_lite', '1.2.0'
+#mod 'puppetlabs-dsc_lite', '1.2.0'
