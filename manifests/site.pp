@@ -30,7 +30,7 @@ node default {
 }
 
 # otro ip
-node ' ip-172-31-82-206.ec2.internal' {
+node 'ip-172-31-82-206.ec2.internal' {
     include role::example
 
 }
