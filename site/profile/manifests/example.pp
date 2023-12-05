@@ -28,4 +28,19 @@ class profile::example {
     group   => 'ubuntu',         # Grupo del archivo
     }
 
+    #3. 
+    # Define la ruta del archivo que deseas crear
+    $archivo_a_crear = '/var/tmp/demo-puppet/archivo1.txt'
+    # Define el contenido del archivo
+    $contenido_del_archivo = 'Ficher nuevo 1'
+
+    # Crea el archivo con el contenido utilizando el recurso file
+    file { $archivo_a_crear:
+    ensure  => file,            # Asegura que es un archivo
+    content => $contenido_del_archivo,  # Establece el contenido del archivo
+    mode    => '0644',          # Permisos para el archivo
+    owner   => 'ubuntu',       # Propietario del archivo
+    group   => 'ubuntu',         # Grupo del archivo
+    }
+
 }
