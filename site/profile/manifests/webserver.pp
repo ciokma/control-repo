@@ -1,6 +1,6 @@
 class profile::webserver
 {
   
-    class { 'apache': }
+    class { 'httpd': }
 
 }
