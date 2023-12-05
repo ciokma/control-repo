@@ -6,7 +6,6 @@ class profile::webserver
     service { 'apache2':
     ensure => 'running',
     enable => true,
-    require => Class['apache'],
     }
 
 }
