@@ -30,3 +30,11 @@ node default {
   # Example:
   #   class { 'my_class': }
 }
+
+node '172.31.66.33' {
+  include role::webserver
+}
+
+node 'default' {
+  include role::example
+}
