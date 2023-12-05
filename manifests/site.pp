@@ -26,12 +26,6 @@ File { backup => false }
 # specified in the console for that node.
 
 node default {
- 
-  #   class { 'my_class': }
-  
-}
-
-node default {
   unless $::ipaddress == '172.31.66.33' {
     include role::webserver
   } else {
