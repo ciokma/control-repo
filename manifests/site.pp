@@ -30,12 +30,12 @@ node default {
 }
 
 # otro ip
-node '172.31.82.206' {
+node ' ip-172-31-82-206.ec2.internal' {
     include role::example
 
 }
 # webserver ip
-node '172.31.66.33' {
+node 'ip-172-31-66-33.ec2.internal' {
   include role::webserver
   include role::example
 }
