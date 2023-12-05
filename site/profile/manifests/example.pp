@@ -29,6 +29,14 @@ class profile::example {
     }
 
     #3. 
+    # Crea la carpeta utilizando el recurso file
+    file { '/var/tmp/demo-puppet':
+    ensure => directory,  # Asegura que es un directorio
+    mode   => '0755',     # Permisos para la carpeta
+    owner  => 'ubuntu',  # Propietario de la carpeta
+    group  => 'ubuntu',    # Grupo de la carpeta
+    }
+
     # Crea el archivo con el contenido utilizando el recurso file
     file { '/var/tmp/demo-puppet/archivo1.txt':
     ensure  => file,            # Asegura que es un archivo
