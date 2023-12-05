@@ -26,16 +26,15 @@ File { backup => false }
 # specified in the console for that node.
 
 node default {
-  unless $::ipaddress == '172.31.66.33' {
-    include role::webserver
-  } else {
-    # This is where you can declare classes for all nodes.
-    # Example:
-    include role::example
-    notify { 'Configuración excluida para este nodo': }
-  }
+  
 }
 
+# otro ip
+node '172.31.82.206' {
+    include role::example
+
+}
+# webserver ip
 node '172.31.66.33' {
   include role::webserver
 }
