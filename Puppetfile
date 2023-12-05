@@ -18,4 +18,9 @@ forge 'https://forge.puppet.com'
 
 #mod 'puppetlabs-dsc_lite', '1.2.0'
 
-mod 'puppetlabs-apache', '7.0.0'
+#mod 'puppetlabs-apache', '7.0.0'
+
+#dependencia
+mod 'puppetlabs-stdlib', '4.25.1'
+#modulo httpd
+mod 'kavishree-httpd', '1.0.2'
