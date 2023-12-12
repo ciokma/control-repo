@@ -33,7 +33,7 @@ class profile::kibana {
         oss => true,
     }   
     #incluir kibana
-
+/*
     # Configuraciones específicas de Kibana
     class { 'kibana':
         ensure => latest,
@@ -43,7 +43,7 @@ class profile::kibana {
         oss => true,
         # Agrega más configuraciones según tus necesidades
     }
-
+*/
     # Puedes gestionar archivos de configuración de Kibana
     /*
     file { '/etc/kibana/kibana.yml':
