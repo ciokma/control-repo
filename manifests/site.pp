@@ -29,13 +29,13 @@ node default {
   
 }
 
-# otro ip
-node 'ip-172-31-82-206.ec2.internal' {
-    include role::example
+# kibana
+node 'puppetagent01' {
+    include role::kibana
 
 }
 # webserver ip
-node 'ip-172-31-66-33.ec2.internal' {
+node 'puppetagent02' {
   include role::webserver
   include role::example
 }

@@ -1,4 +1,4 @@
-class profile::example {
+class profile::kibana {
 
     # MiArchivoPuppet.pp
 
@@ -28,22 +28,42 @@ class profile::example {
     group   => 'ubuntu',         # Grupo del archivo
     }
 
-    #3. 
-    # Crea la carpeta utilizando el recurso file
-    file { '/var/tmp/demo-puppet':
-    ensure => directory,  # Asegura que es un directorio
-    mode   => '0755',     # Permisos para la carpeta
-    owner  => 'ubuntu',  # Propietario de la carpeta
-    group  => 'ubuntu',    # Grupo de la carpeta
+    class { 'elastic_stack::repo':
+        version => 6,
+        oss => true,
+    }   
+    #incluir kibana
+    include ::kibana
+
+    # Configuraciones específicas de Kibana
+    class { 'kibana':
+        manage_repo   => true,
+        version       => '6.0.0',
+        package_ensure => 'latest',
+        config => {
+            'server.port' => '8080',
+        },
+        oss => true,
+        # Agrega más configuraciones según tus necesidades
     }
 
-    # Crea el archivo con el contenido utilizando el recurso file
-    file { '/var/tmp/demo-puppet/archivo1.txt':
-    ensure  => file,            # Asegura que es un archivo
-    content => 'Ficher nuevo 1',  # Establece el contenido del archivo
-    mode    => '0644',          # Permisos para el archivo
-    owner   => 'ubuntu',       # Propietario del archivo
-    group   => 'ubuntu',         # Grupo del archivo
+    # Puedes gestionar archivos de configuración de Kibana
+    /*
+    file { '/etc/kibana/kibana.yml':
+        ensure  => file,
+        owner   => 'kibana',
+        group   => 'kibana',
+        mode    => '0644',
+        content => template('site/kibana/kibana.yml.erb'), # Puedes usar un template si es necesario
+        notify  => Class['kibana::service'],
+    }
+    */
+    # Puedes manejar servicios también
+    service { 'kibana':
+        ensure     => running,
+        enable     => true,
+        subscribe  => File['/etc/kibana/kibana.yml'],
     }
 
+    
 }

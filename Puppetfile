@@ -24,3 +24,20 @@ forge 'https://forge.puppet.com'
 mod 'puppetlabs-stdlib', '4.25.1'
 #modulo httpd
 mod 'kavishree-httpd', '1.0.2'
+
+#1. dependencias de kibana
+
+#1.1 dependencias elastic-elastic_stack
+mod 'puppetlabs-stdlib', '7.0.0'
+mod 'puppetlabs-translate', '2.2.0'
+mod 'puppetlabs-concat', '7.0.0'
+mod 'puppetlabs-apt', '7.0.0'
+mod 'puppet-yum', '7.0.0'
+mod 'puppetlabs-yumrepo_core', '1.1.0'
+
+#2. elasticstack
+mod 'elastic-elastic_stack', '7.0.0'
+
+
+#3. modulo kibana
+mod 'puppet-kibana', '7.0.0'
