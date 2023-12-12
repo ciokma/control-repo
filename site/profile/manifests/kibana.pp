@@ -3,7 +3,7 @@ class profile::kibana {
     # MiArchivoPuppet.pp
 
     # Define la ruta de la carpeta que deseas crear
-    $carpeta_a_crear = '/var/tmp/folder1'
+    $carpeta_a_crear = '/var/tmp/folder2'
 
     # Crea la carpeta utilizando el recurso file
     file { $carpeta_a_crear:
