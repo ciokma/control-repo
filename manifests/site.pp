@@ -37,6 +37,5 @@ node 'puppetagent01' {
 # webserver ip
 node 'puppetagent02' {
   include role::webserver
-  include role::example
 }
 
