@@ -29,15 +29,14 @@ class profile::kibana {
     }
 
     class { 'elastic_stack::repo':
-        version => 6,
+        version => 5,
         oss => true,
     }   
     #incluir kibana
 
     # Configuraciones específicas de Kibana
     class { 'kibana':
-        manage_repo   => true,
-        version       => '6.0.0',
+        ensure => latest
         config => {
             'server.port' => '8080',
         },
