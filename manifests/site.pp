@@ -30,12 +30,12 @@ node default {
 }
 
 # kibana
-node 'puppetagent01' {
+node 'puppetagent01.ec2.internal' {
     include role::kibana
 
 }
 # webserver ip
-node 'puppetagent02' {
+node 'puppetagent02.ec2.internal' {
   include role::webserver
 }
 

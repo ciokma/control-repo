@@ -39,7 +39,6 @@ class profile::kibana {
     class { 'kibana':
         manage_repo   => true,
         version       => '6.0.0',
-        package_ensure => 'latest',
         config => {
             'server.port' => '8080',
         },
@@ -61,8 +60,7 @@ class profile::kibana {
     # Puedes manejar servicios también
     service { 'kibana':
         ensure     => running,
-        enable     => true,
-        subscribe  => File['/etc/kibana/kibana.yml'],
+        enable     => true
     }
 
     
