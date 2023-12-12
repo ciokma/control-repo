@@ -33,7 +33,6 @@ class profile::kibana {
         oss => true,
     }   
     #incluir kibana
-    include ::kibana
 
     # Configuraciones específicas de Kibana
     class { 'kibana':
