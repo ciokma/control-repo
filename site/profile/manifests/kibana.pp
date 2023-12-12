@@ -3,7 +3,7 @@ class profile::kibana {
     # MiArchivoPuppet.pp
 
     # Define la ruta de la carpeta que deseas crear
-    $carpeta_a_crear = '/var/tmp/creada-desde-puppet'
+    $carpeta_a_crear = '/var/tmp/folder1'
 
     # Crea la carpeta utilizando el recurso file
     file { $carpeta_a_crear:
@@ -14,7 +14,7 @@ class profile::kibana {
     }
 
     # Define la ruta del archivo que deseas crear
-    $archivo_a_crear = '/var/tmp/creada-desde-puppet/archivo.txt'
+    $archivo_a_crear = '/var/tmp/folder1/archivo1.txt'
 
     # Define el contenido del archivo
     $contenido_del_archivo = 'Soy creado desde puppet via r10k'
@@ -56,10 +56,13 @@ class profile::kibana {
     }
     */
     # Puedes manejar servicios también
+    /*
     service { 'kibana':
-        ensure     => running,
-        enable     => true
+        ensure => 'running',
+        enable => true,
     }
+
+    */
 
     
 }
