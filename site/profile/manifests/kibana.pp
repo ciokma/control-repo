@@ -36,7 +36,7 @@ class profile::kibana {
 
     # Configuraciones específicas de Kibana
     class { 'kibana':
-        ensure => latest
+        ensure => latest,
         config => {
             'server.port' => '8080',
         },
